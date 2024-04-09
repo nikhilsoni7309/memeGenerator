@@ -20,7 +20,6 @@ const LogoBox = styled.div`
     color: white;
     font-size: 0.5rem;
     border-radius: 1rem;
-    border: 3px solid white;
 
     img {
         height: 3rem;

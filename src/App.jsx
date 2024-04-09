@@ -17,7 +17,7 @@ function App() {
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: #592059;
+  background-color: #02052c;
   display: flex;
   justify-content: center;
   align-items: center;

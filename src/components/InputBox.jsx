@@ -41,7 +41,7 @@ function InputBox() {
         <input 
           type="text" 
           placeholder='Top text'
-          name="toptext"
+          name="topText"
           value={meme.topText}
           onChange={handleChange}
         />
@@ -56,8 +56,8 @@ function InputBox() {
       <button onClick={getMemeImage}>Get a new meme image</button>
       <ImgBox>
         <img src={meme.randomImage} alt="meme image" />
-        <p>{meme.topText}</p>
-        <p>{meme.bottomText}</p>
+        <TopText>{meme.topText}</TopText>
+        <BottomText>{meme.bottomText}</BottomText>
       </ImgBox>
     </InputContainer>
   )
@@ -73,7 +73,8 @@ const InputContainer = styled.div`
         background-color: #9f009f;
         color: white;
         width: 86%;
-
+        font-size: large;
+        border: 2px solid white;
     }
 `
 
@@ -81,28 +82,30 @@ const Input = styled.div`
     display: flex;
     padding: 1rem;
     input {
-        margin: 0.5rem;
+        color: black;
+        margin: 0.9rem;
         margin-inline: 0.9rem;
-        padding: 0.8rem;
+        padding: 0.9rem;
         border-radius: 0.7rem;
-    
+        font-size: medium;
+        border: 1px solid white;
+        background-color: white;
     }
 `
 
 const ImgBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.6rem;
-  font-family: cursive;
-  color: #7962e9;
-  font-weight: bolder;
+  position: relative;
+  font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: #fff;
   height: 15rem;
-  margin: 1rem;
+  margin: 2rem;
   width: 86%;
   background-color: #ffffc9;
-  position: relative;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
 
   img {
     width: 100%;
@@ -110,10 +113,17 @@ const ImgBox = styled.div`
     object-fit: contain;
   }
 
-  p {
+  h2 {
     position: absolute;
+    margin: 0.5rem;
   }
 
+`
+const TopText = styled.h2`
+    top: 0;
+`
+const BottomText = styled.h2`
+    bottom: 0;
 `
 
 export default InputBox
